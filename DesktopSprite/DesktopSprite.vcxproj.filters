@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -19,37 +11,21 @@
     <Filter Include="资源文件\Content\Image">
       <UniqueIdentifier>{299f69a0-5f50-4a49-bc3f-ebfc1f7fc12b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Sprite">
-      <UniqueIdentifier>{04fb262f-2991-46b4-95a6-b9d44595d7ee}</UniqueIdentifier>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{cb55d29c-a836-472a-97ba-9e0456d7e933}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Main">
-      <UniqueIdentifier>{b1d56d17-5b5b-400e-b7e4-6c054e711660}</UniqueIdentifier>
+    <Filter Include="Scripts\源文件">
+      <UniqueIdentifier>{d966f8c7-d060-4514-b0f0-8f295bd64fa1}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="StartUp.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="DeskpetWindow.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="SpriteAction.h">
-      <Filter>头文件\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteHandle.h">
-      <Filter>头文件\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="resoures.h">
-      <Filter>头文件\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="DeskpetWindow.h">
-      <Filter>头文件\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>头文件\Main</Filter>
-    </ClInclude>
+    <Filter Include="Scripts\源文件\Sprite">
+      <UniqueIdentifier>{96a6c078-b58e-4457-aa22-e9a1cd388a6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\头文件">
+      <UniqueIdentifier>{c20d1f63-e237-4ecf-9f5c-70420c76f39f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\头文件\Sprite">
+      <UniqueIdentifier>{6a932862-79c5-491e-9c78-38412f349ce9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Content\Image\back1.png">
@@ -58,5 +34,39 @@
     <Image Include="Content\Image\back2.png">
       <Filter>资源文件\Content\Image</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scripts\Animation.h">
+      <Filter>Scripts\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\DeskpetWindow.h">
+      <Filter>Scripts\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\SpriteAction.h">
+      <Filter>Scripts\头文件\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\SpriteHandle.h">
+      <Filter>Scripts\头文件\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\resoures.h">
+      <Filter>Scripts\头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\StartUp.cpp">
+      <Filter>Scripts\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\DeskpetWindow.cpp">
+      <Filter>Scripts\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\SpriteHandle.cpp">
+      <Filter>Scripts\源文件\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Animation.cpp">
+      <Filter>Scripts\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\SpriteAction.cpp">
+      <Filter>Scripts\源文件\Sprite</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 #pragma once
 #include "Animation.h"
+
 namespace Sprite {
 	enum ActionState {
 		stay, walk, craw, push, drop
@@ -18,12 +19,4 @@ namespace Sprite {
 		vector<ID2D1Bitmap> images;
 
 	};
-
-	SpriteAction::SpriteAction()
-	{
-	}
-
-	SpriteAction::~SpriteAction()
-	{
-	}
 }

@@ -13,16 +13,4 @@ namespace Sprite {
 		SpriteAction action;
 	};
 
-	SpriteHandle::SpriteHandle()
-	{
-	}
-
-	SpriteHandle::~SpriteHandle()
-	{
-	}
-
-	void SpriteHandle::LoadAnmationResources()
-	{
-
-	}
 }
