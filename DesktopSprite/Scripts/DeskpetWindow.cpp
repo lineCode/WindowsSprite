@@ -1,12 +1,17 @@
 #include "DeskpetWindow.h"
 using namespace D2DWindow;
 
-DeskpetWindow::DeskpetWindow(LPCWSTR wndTitle, POINT point, SIZE wndsize)
+DeskpetWindow::DeskpetWindow(HINSTANCE hInstance, LPCWSTR wndTitle, POINT point, SIZE wndsize, int cmdShow)
 {
-	WinName = wndTitle;
-	ScreenPoint = point;
-	WndSize = wndsize;
-	wndClassName = TEXT("DeskpetWindow_kaakira");
+	this->WinName = wndTitle;
+	this->ScreenPoint = point;
+	this->WndSize = wndsize;
+	this->wndClassName = TEXT("DeskpetWindow_kaakira");
+	this->Hinstance = hInstance;
+	this->CmdShow = cmdShow;
+	if (this->Initialzation()) {
+		MessageBox(NULL, TEXT("初始化Deskpet窗体失败"), TEXT("DeskpetWindow"), NULL);
+	}
 }
 
 DeskpetWindow::~DeskpetWindow()
@@ -15,18 +20,15 @@ DeskpetWindow::~DeskpetWindow()
 
 
 /// <sumary>Nihao</sumary>
-bool DeskpetWindow::Initialzation(HINSTANCE hInstance, HINSTANCE prevInstance, LPWSTR cmdLine, int cmdShow)
+bool DeskpetWindow::Initialzation()
 {
 #pragma region 初始化窗体参数//基本不用改动
-	this->Hinstance = hInstance;
-	UNREFERENCED_PARAMETER(prevInstance);
-	UNREFERENCED_PARAMETER(cmdLine);
 
 	WNDCLASSEXW wndClass = { 0 };
 	wndClass.cbSize = sizeof(WNDCLASSEX);
 	wndClass.style = CS_HREDRAW | CS_VREDRAW;
 	wndClass.lpfnWndProc = DeskpetWindow::WndProc;
-	wndClass.hInstance = hInstance;
+	wndClass.hInstance = this->Hinstance;
 	wndClass.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wndClass.hbrBackground = (HBRUSH)(COLOR_WINDOW);
 	//wndClass.lpszMenuName = NULL;
@@ -72,16 +74,24 @@ bool DeskpetWindow::Initialzation(HINSTANCE hInstance, HINSTANCE prevInstance, L
 
 void DeskpetWindow::Update()
 {
-	//CreateD2DResource(Hwnd);
-	spriteInstace.LoadAnmationResources();
-	//Clear();
-
-	UpdateWindow(Hwnd);
-
+	// spriteInstace.LoadAnmationResources();
+	// UpdateWindow(Hwnd);
 }
 
 
 LPCWSTR DeskpetWindow::GetwndClassName()
 {
 	return this->wndClassName;
+}
+
+
+bool DeskpetWindow::ShowSpriteWindow(int cmdShow)
+{
+	this->CmdShow = cmdShow;
+
+#pragma region TODO: 第一次显示窗体需要初始化的配置项
+
+#pragma endregion
+
+	return ShowWindow(this->Hwnd, this->CmdShow);
 }

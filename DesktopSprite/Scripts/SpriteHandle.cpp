@@ -2,13 +2,20 @@
 using  namespace Sprite;
 SpriteHandle::SpriteHandle()
 {
+	// 初始化动作控制器
 }
 
 SpriteHandle::~SpriteHandle()
 {
+
 }
 
-void SpriteHandle::LoadAnmationResources()
+ActionState Sprite::SpriteHandle::GetCurrentAction()
 {
-
+	return ActionState();
 }
+
+//void SpriteHandle::LoadAnmationResources()
+//{
+//
+//}

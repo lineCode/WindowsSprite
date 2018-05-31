@@ -4,27 +4,14 @@ using namespace D2DWindow;
 DeskpetWindow* petWnd;
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE prevInstance, LPWSTR cmdLine, int cmdShow)
 {
-
+	// 窗体默认参数 
+	// TODO:改为可配置
 	int width = 600, height = 600, x = 100, y = 100;
 
-	// 构造精灵窗体
-	petWnd = new DeskpetWindow(
-		TEXT("Hello World"),
-		POINT{ x, y },
-		SIZE{ width,height }
-	);
-
-	// 初始化wnd窗体
-	if (!petWnd->Initialzation(hInstance))
-	{
-		MessageBox(NULL, TEXT("创建窗体失败"), TEXT("失败"), NULL);
-		return 0;
-	}
-
+	// 构造精灵窗体 (初始化windows窗体)
+	petWnd = new DeskpetWindow(hInstance, TEXT("Hello World"), POINT{ x, y }, SIZE{ width,height });
 	// 显示窗体
-	ShowWindow(petWnd->Hwnd, cmdShow);
-	// 进行第一次默认 更新
-	petWnd->Update();
+	petWnd->ShowSpriteWindow(cmdShow);
 	MSG msg = { 0 };
 	while (msg.message != WM_QUIT)
 	{
@@ -38,7 +25,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE prevInstance, LPWSTR cmdLine,
 			// 进行更新  
 			petWnd->Update();
 		}
-
 		//Cleanup();
 		Sleep(50);
 	}

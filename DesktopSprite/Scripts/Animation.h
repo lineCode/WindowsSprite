@@ -21,9 +21,11 @@ namespace D2DWindow {
 	public:
 		Animation();
 		~Animation();
+		
 		// 播放动画
 		int Play();
-
+		// 创建位图
+		ID2D1Bitmap* CreateBitmapFromFile(LPCWSTR fileName);
 	private:
 
 
@@ -36,8 +38,9 @@ namespace D2DWindow {
 		ID2D1RenderTarget*			pRenderTarget;
 		// 窗体句柄 呈现器目标
 		ID2D1HwndRenderTarget*		pHwndRenderTarget;
+		
+		// 初始化D2D常驻设备资源
 		bool InitialzationD2DFactory(HWND hwnd);
-		bool CreateBitmapFromFile(LPCWSTR fileName);
 	};
 #pragma endregion
 

@@ -6,24 +6,25 @@ using namespace Sprite;
 
 namespace D2DWindow {
 
+	//private const int SW_HIDE = 0; 　　		//从任务栏隐藏
+	//private const int SW_NORMAL = 1;			//正常弹出窗体 
+	//private const int SW_MAXIMIZE = 3;		//最大化弹出窗体 
+	//private const int SW_SHOWNOACTIVATE = 4;	//激活窗体/恢复窗体/还原窗体
+	//private const int SW_SHOW = 5; 　　		//显示窗体，最小化时不会最大化
+	//private const int SW_MINIMIZE = 6; 　　	//最小化
+	//private const int SW_RESTORE = 9;
+	//private const int SW_SHOWDEFAULT = 10;
 	class DeskpetWindow
 	{
 
 	public:
-		DeskpetWindow(LPCWSTR wndTitle, POINT point, SIZE wndsize);
+		DeskpetWindow(HINSTANCE Hinstance,LPCWSTR wndTitle, POINT point, SIZE wndsize,int cmdShow = SW_SHOWDEFAULT);
 		~DeskpetWindow();
 
-		LPCWSTR GetwndClassName();
-
+		// 精灵总控制器（"精灵的大脑"）
 		SpriteHandle spriteInstace;
-
-
-
-
 		// 应用窗口句柄
 		HWND Hwnd;
-		// 窗体类名标识
-		LPCWSTR wndClassName;
 		// 应用窗口标题
 		LPCWSTR WinName;
 		// 应用实例句柄
@@ -32,25 +33,29 @@ namespace D2DWindow {
 		POINT ScreenPoint;
 		// 窗体宽高
 		SIZE WndSize;
+		// 显示窗体模式
+		int CmdShow = SW_SHOWDEFAULT;
 
-		/// <sumary>
-		/// 窗体过程响应事件方法，处理事件消息
-		/// </sumary>
+
+		// 窗体过程响应事件方法，处理事件消息
 		static LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
-
-		// 初始化窗体 
-		bool Initialzation(HINSTANCE hInstance, HINSTANCE prevInstance = 0, LPWSTR cmdLine = 0, int cmdShow = 0);
-
-		/// <sumary> 重绘-更新窗口 </sumary> 
-		void Update(); 
-
+		// 重绘-更新窗口  
+		void Update();
+		// 获取窗体类名名称
+		LPCWSTR GetwndClassName();
+		// 显示精灵窗体
+		bool ShowSpriteWindow(int cmdShow = SW_SHOWDEFAULT);
 
 	private:
-		
+		// 窗体类名标识
+		LPCWSTR wndClassName;
+		 
+
+
+		// 初始化窗体 
+		bool Initialzation();
+
 	};
-#ifndef SAFE_RELEASE
-#define SAFE_RELEASE(P) if(P){P->Release() ; P = NULL ;} 
-#endif
 
 
 }

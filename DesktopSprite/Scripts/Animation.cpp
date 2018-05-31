@@ -1,4 +1,6 @@
 #include "Animation.h"
+
+#define SAFE_RELEASE(P) if(P){P->Release() ; P = NULL ;} 
 using namespace D2DWindow;
 Animation::Animation()
 {
@@ -46,7 +48,7 @@ bool Animation::InitialzationD2DFactory(HWND hwnd) {
 	return true;
 }
 
-bool Animation::CreateBitmapFromFile(LPCWSTR fileName)
+ID2D1Bitmap* Animation::CreateBitmapFromFile(LPCWSTR fileName)
 {
 	HRESULT hr = S_OK;
 	char s[] = "C:\\Users\\NET45.png";
@@ -71,9 +73,13 @@ bool Animation::CreateBitmapFromFile(LPCWSTR fileName)
 	);
 	ID2D1Bitmap* pBitmap;
 	hr = pHwndRenderTarget->CreateBitmapFromWicBitmap(pConverter, NULL, &pBitmap);
+	if (FAILED(hr))
+	{
+		MessageBox(NULL, TEXT("创建bitmap出现错误:" + hr), TEXT("Animtaion.cpp"), NULL);
+	}
 
 	/*	SAFE_RELEASE(pDecoder);
 	SAFE_RELEASE(pSource);
 	SAFE_RELEASE(pConverter);*/
-	return true;
+	return pBitmap;
 }
