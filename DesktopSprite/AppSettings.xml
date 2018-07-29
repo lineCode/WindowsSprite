@@ -1,0 +1,6 @@
+<Sprite>
+  <Actions>
+    <action Name="Test" Values="Back1.jpg;Back2.jpg"/>
+    <action Name="Stay" Values="Back1.jpg;Back2.jpg"/>
+  </Actions>
+</Sprite>

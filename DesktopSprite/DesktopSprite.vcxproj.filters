@@ -5,12 +5,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="资源文件\Content">
-      <UniqueIdentifier>{2f21968c-c02c-418a-8892-6ce432d3f270}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="资源文件\Content\Image">
-      <UniqueIdentifier>{299f69a0-5f50-4a49-bc3f-ebfc1f7fc12b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scripts">
       <UniqueIdentifier>{cb55d29c-a836-472a-97ba-9e0456d7e933}</UniqueIdentifier>
     </Filter>
@@ -26,20 +20,18 @@
     <Filter Include="Scripts\头文件\Sprite">
       <UniqueIdentifier>{6a932862-79c5-491e-9c78-38412f349ce9}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Content\Image\back1.png">
-      <Filter>资源文件\Content\Image</Filter>
-    </Image>
-    <Image Include="Content\Image\back2.png">
-      <Filter>资源文件\Content\Image</Filter>
-    </Image>
+    <Filter Include="Content">
+      <UniqueIdentifier>{06d5489b-7950-4dd9-9bb4-cac08c2ff372}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content\Images">
+      <UniqueIdentifier>{c8112e3d-fc14-4232-862a-a323032efb5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\源文件\Tools">
+      <UniqueIdentifier>{b7f87a99-7bd3-4cc9-a319-a97087333eda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scripts\Animation.h">
-      <Filter>Scripts\头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Scripts\DeskpetWindow.h">
       <Filter>Scripts\头文件</Filter>
     </ClInclude>
     <ClInclude Include="Scripts\SpriteAction.h">
@@ -48,15 +40,14 @@
     <ClInclude Include="Scripts\SpriteHandle.h">
       <Filter>Scripts\头文件\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="Scripts\resoures.h">
+    <ClInclude Include="resoures.h">
       <Filter>Scripts\头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Scripts\WindowInfo.h" />
+    <ClInclude Include="Scripts\PlayerResult.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scripts\StartUp.cpp">
-      <Filter>Scripts\源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Scripts\DeskpetWindow.cpp">
       <Filter>Scripts\源文件</Filter>
     </ClCompile>
     <ClCompile Include="Scripts\SpriteHandle.cpp">
@@ -68,5 +59,34 @@
     <ClCompile Include="Scripts\SpriteAction.cpp">
       <Filter>Scripts\源文件\Sprite</Filter>
     </ClCompile>
+    <ClCompile Include="Scripts\ComException.cpp">
+      <Filter>Scripts\源文件\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\WindowInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppSettings.xml">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\Content\Images\back1.png">
+      <Filter>Content\Images</Filter>
+    </Image>
+    <Image Include="Resource\Content\Images\back2.png">
+      <Filter>Content\Images</Filter>
+    </Image>
+    <Image Include="Content\Images\back1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Content\Images\back2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\CarmaleSprite\Carmale\img\meiIcon.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Content\meiIcon.ico">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -115,22 +115,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Image Include="Content\Image\back1.png" />
-    <Image Include="Content\Image\back2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Scripts\Animation.h" />
-    <ClInclude Include="Scripts\DeskpetWindow.h" />
-    <ClInclude Include="Scripts\resoures.h" />
+    <ClInclude Include="resoures.h" />
+    <ClInclude Include="Scripts\PlayerResult.h" />
     <ClInclude Include="Scripts\SpriteAction.h" />
     <ClInclude Include="Scripts\SpriteHandle.h" />
+    <ClInclude Include="Scripts\WindowInfo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scripts\ComException.cpp" />
     <ClCompile Include="Scripts\Animation.cpp" />
-    <ClCompile Include="Scripts\DeskpetWindow.cpp" />
     <ClCompile Include="Scripts\SpriteAction.cpp" />
     <ClCompile Include="Scripts\SpriteHandle.cpp" />
     <ClCompile Include="Scripts\StartUp.cpp" />
+    <ClCompile Include="Scripts\WindowInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppSettings.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\CarmaleSprite\Carmale\img\meiIcon.ico" />
+    <Image Include="Content\Images\back1.png" />
+    <Image Include="Content\Images\back2.png" />
+    <Image Include="Content\meiIcon.ico" />
+    <Image Include="Resource\Content\Images\back1.png" />
+    <Image Include="Resource\Content\Images\back2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
